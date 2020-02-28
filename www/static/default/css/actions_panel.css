@@ -1,0 +1,143 @@
+
+
+
+/**ПАНЕЛЬ ДЛЯ ОСНОВНЫХ ДЕЙСТВИЙ*/
+.main_actions_section {
+	height: 60px;
+	width: 100%;
+}
+
+.main_actions_div {
+	height: 60px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+}
+
+.actions_panel {
+	background-color: rgb(71,157,190);
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.actions_panel > p {
+	margin-left: 25%;
+	color: #ffffff;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.search_input_div {
+	height: 40px;
+	position: relative;
+	margin-left: 10%;
+}
+
+.search_input_div > input {
+	height: 40px;
+	background-color: #3884a1;
+	border: none;
+	padding-left: 10px;
+	font-size: 16px;
+	color: #ffffff;
+	display: block;
+	width: 100%;
+}
+
+.search_input_div > input::placeholder {
+	font-size: 16px;
+	color: #ffffff;
+	opacity: 1;
+}
+
+.search_input_div::after {
+	content: '';
+	display: block;
+	position: absolute;
+	right: -15px;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-left: 15px solid #3884a1;
+	border-bottom: 20px solid transparent;
+
+}
+
+.login_link {
+	margin-left: 25%;
+	text-decoration: none;
+	color: none;
+	border-bottom: 1px dashed white;
+	color: white;
+	display: block;
+	width: 50%;
+	font-size: 14px;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.login_link::before {
+	content: '';
+	display: inline-block;
+	background: url('/images/site/login_link_before.jpg') no-repeat center top / cover;
+	height: 25px;
+	width: 25px;
+	margin-right: 5px;
+	vertical-align: middle;
+	border:none;
+}
+
+.actions_panel:after {
+	content: '';
+	display: block;
+	position: absolute;
+	right: -15px;
+	top: 0px;
+	width: 0;
+	height: 0;
+	border-top: 30px solid transparent;
+	border-left: 15px solid rgb(71,157,190);
+	border-bottom: 30px solid transparent;
+}
+
+.cart_div {
+	margin-left: 15%;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	position: relative;
+}
+
+.cart_link, #price_of_cart {
+	color: white;
+	font-size: 14px;
+	font-weight: 900;
+	margin-top: 10px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+#price_of_cart {
+	margin-top: 5px;
+	font-weight: 400;
+}
+
+.cart_panel {
+	background-color: rgb(141,174,38);
+}
+
+.cart_div::before {
+	content: '';
+	position: absolute;
+	top: 30%;
+	left: -30px;
+	display: inline-block;
+	background: url('/images/site/cart_div_before.jpg') no-repeat center top / cover;
+	height: 25px;
+	width: 25px;
+}

@@ -1,16 +1,18 @@
 <?php 
 
 
-/**Модель для обращения к таблице продуктов*/
+/**
+* Модель для обращения к таблице продуктов
+*/
 
 
 
 /**
-*	Возвращает последние продукты в нужном количестве
-*	@param int $count - количество продуктов
+* Возвращает последние продукты в нужном количестве
+* @param int $count - количество продуктов
 */
 function getLastProducts($count) {
-	$pdo = $GLOBALS['db'];
+	$pdo = $GLOBALS['db']; //преодоление ограниченной области видимости функции
 
 	$sql = "SELECT name, price, image, id FROM products LIMIT $count";
 	$query = $pdo->prepare($sql);
@@ -21,11 +23,11 @@ function getLastProducts($count) {
 }
 
 /**
-*	Возвращает продукт с указанным id
-*	@param int $id - id продукта
+* Возвращает продукт с указанным id
+* @param int $id - id продукта
 */
 function getProductById($id) {
-	$pdo = $GLOBALS['db'];
+	$pdo = $GLOBALS['db']; //преодоление ограниченной области видимости функции
 
 	$sql = "SELECT * FROM products WHERE id = :id";
 	$query = $pdo->prepare($sql);
@@ -40,7 +42,7 @@ function getProductById($id) {
 *	@param int $arrayIds - массив id
 */
 function getProductFromCartArray($arrayIds) {
-	$pdo = $GLOBALS['db'];
+	$pdo = $GLOBALS['db']; //преодоление ограниченной области видимости функции
 	$result = array();
 
 	foreach($arrayIds as $id) {

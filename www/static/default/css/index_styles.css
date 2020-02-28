@@ -1,0 +1,36 @@
+/* Стили для вывода продуктов на главной странице */
+.index_last_products {
+	margin-top: 20px;
+	margin-bottom: 100px;
+}
+
+.index_products {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: center;
+	align-content: center;
+}
+
+.index_product_name {
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 22px;
+	color: #0275d8;
+	height: 100px;
+}
+
+.index_product_name:hover {
+	color: #292b2c;
+	text-decoration: underline;
+ 
+}
+
+.index_product_price {
+	color: #799b10;
+	font-size: 28px;
+}
+
+.index_ruble {
+	font-weight: 300;
+}

@@ -1,13 +1,20 @@
 <?php 
 
-	require_once '../models/ProductsModel.php';
-
-/*Контроллер корзины*/
-
 
 
 /**
-*	Формирует страницу корзины
+*
+* Контроллер корзины. Отвечает за действия с корзиной и выводит её стрпаницы
+*
+*/
+
+
+//Подключение необходимых моделей для обращения к бд
+require_once '../models/ProductsModel.php';
+
+
+/**
+* Формирует страницу корзины
 */
 function indexAction() {
 	$cartProducts = getProductFromCartArray($_SESSION['cart']);
@@ -20,12 +27,13 @@ function indexAction() {
 
 
 /**
-*	Добавляет продукт с указанным id в корзину
+* Добавляет продукт с указанным id в корзину
 */
 function addtocartAction() {
 	$resData = array(); //результат, который будет отправлен в формате json
 	$productId = isset($_GET['id']) ? intval($_GET['id']) : null;
 
+	//Если id добавляемого продукта не был передан, то выходим из функции
 	if (! $productId) return false;
 
 	if (isset($_SESSION['cart']) && array_search($productId, $_SESSION['cart']) === false) {
@@ -41,7 +49,7 @@ function addtocartAction() {
 }
 
 /**
-*	Удаляет продукт с указанным id из корзины
+* Удаляет продукт с указанным id из корзины
 */
 function removefromcartAction() {
 	$resData = array(); //результат, который будет отправлен в формате json

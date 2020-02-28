@@ -1,7 +1,11 @@
 <?php 
 
 
-/***Index Controller*/
+/**
+*
+* Контроллер главной страницы
+*
+*/
 require_once '../models/ProductsModel.php';
 
 

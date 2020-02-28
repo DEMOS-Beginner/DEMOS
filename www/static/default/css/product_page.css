@@ -1,0 +1,54 @@
+/*СТИЛИ СТРАНИЦЫ ОПРЕДЕЛЁННОГО ПРОДУКТА*/
+.product_section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.product_section > .container > .product_name {
+	color: black;
+}
+
+.product_categories_block {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.product_image {
+	width: 70%;
+}
+
+.product_buy {
+	display: grid;
+	align-content: center;
+	grid-template-rows: 1fr 1fr 1fr 3fr;
+}
+
+.product_price {
+	color: #799b10;
+	font-size: 59px;
+	font-weight: 500;
+}
+
+.product_ruble {
+	color: #799b10;
+	font-size: 22px;
+	font-weight: 400;
+	margin-bottom: 60px;
+	font-style: italic;
+}
+
+.product_buy_block {
+	width: 20%;
+	height: 50px;
+	background-color: #799b10;
+	display: grid;
+	align-content: center;
+}
+
+.product_buy_block > a {
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin: 0 auto;
+}

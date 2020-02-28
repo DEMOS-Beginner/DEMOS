@@ -1,11 +1,15 @@
 <?php 
 
-	require_once '../models/ProductsModel.php';
+/**
+* Контроллер продуктов. Формирует страницу необходимого продукта
+*/
 
+//Подключение необходимых моделей
+require_once '../models/ProductsModel.php';
 
-/**Контроллер продуктов*/
-
-
+/**
+* Формирует страницу необходимого продукта
+*/
 function indexAction() {
 	$id = isset($_GET['id']) ? intval($_GET['id']) : null;
 	if ($id) {
@@ -17,7 +21,7 @@ function indexAction() {
 			loadTemplate('footer');
 		}
 	} else {
-		echo 'Такого товара не найдено!';
+		echo 'Такого товара не найдено!'; //FIXME - СТОИТ СФОРМИРОВАТЬ ШАБЛОН
 	}
 }
 

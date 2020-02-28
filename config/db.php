@@ -5,12 +5,13 @@
 *
 */
 
-	$dblocation = '127.0.0.1';
-	$dbname = 'true_cm_db';
-	$dbuser = 'root';
-	$dbpassword = '';
-	$hostName = 'myblog.local';
+	$dblocation = '127.0.0.1'; //ip базы данных
+	$dbname = 'true_cm_db'; //название базы
+	$dbuser = 'root'; //имя пользователя
+	$dbpassword = ''; //пароль пользователя
+	$hostName = 'myblog.local'; //имя хоста
 
+	//Установка соединения
 	try {
 		$db = new PDO("mysql:host=$hostName;dbname=$dbname", $dbuser, $dbpassword, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 	} catch (PDOException $e) {

@@ -1,5 +1,6 @@
-<a href="/">Главная</a> - <span class='cart_top_span'>Моя корзина</span>
-<h2>МОЯ КОРЗИНА</h2>
+<a href="/">Главная</a> - <span class='cart_top_span'>Моя корзина </span>
+<h2> МОЯ КОРЗИНА </h2>
+
 <?php if (count($cartProducts) < 1): ?>
 	<h3>
 		Ваша корзина пуста
@@ -12,7 +13,7 @@
 			<td>Количество</td>
 			<td>Цена</td>
 		</tr>
-<?php	foreach ($cartProducts as $product): ?>
+	<?php foreach ($cartProducts as $product): ?>
 		<tr>
 			<td><?=$product['name']?></td>
 			<td></td>
@@ -23,6 +24,6 @@
 			</td>
 			<td><?=$product['price']?></td>
 		</tr>
-<?php  endforeach; ?>
+	<?php  endforeach; ?>
 	</table>
 <?php endif; ?>

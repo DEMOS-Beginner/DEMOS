@@ -1,0 +1,162 @@
+/*Стили для HEADER*/
+.header_first { /*Самый первый header на странице*/
+	height: 50px;
+	display: grid;
+	align-content: center;
+
+}
+
+.header_border_bottom { /*Подчеркивание под первым хедером*/
+	border-bottom: 0.1px solid rgba(0,0,0,0.25);	
+}
+
+.header_first_nav { /*навбар в первом хедере*/
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.header_city {
+	display: grid;
+	align-content: center;
+	grid-template-columns: 1fr 1fr;
+	width: 45%;
+}
+
+.header_city_text {
+	margin-top: 3px;
+	font-size: 13px;
+	font-weight: 300;
+	color: gray;
+}
+
+.header_first_nav > ul > li {
+	display: block;
+	float: left;
+	margin-right: 20px;
+	height: 50px;
+	display: grid;
+	align-content: center;
+}
+
+.header_first_nav > ul > li > a {
+	font-size: 13px;
+	font-weight: 300;
+	color: gray;
+	text-decoration: none;
+}
+
+.header_first_nav > .header_hover_links > li:hover { 
+	border-bottom: 2px solid #799b10;
+}
+
+.header_blog_link, .header_shop_link, .header_purchase_link {
+	display: block;
+	border-bottom: 0.5px dashed black;
+	margin-top: 1px;
+}
+
+.header_blog_link::before {
+	content: '';
+	display: inline-block;
+	background: url('/images/site/blog_before.jpg') no-repeat center top / cover;
+	height: 20px;
+	width: 20px;
+	border:none
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.header_purchase_link::before {
+	content: '';
+	display: inline-block;
+	background: url('/images/site/purchase_before.jpg') no-repeat center top / cover;
+	height: 20px;
+	width: 20px;
+	border:none;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.header_shop_link::before {
+	content: '';
+	display: inline-block;
+	background: url('/images/site/shops_before.jpg') no-repeat center top / cover;
+	height: 20px;
+	width: 20px;
+	border:none;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+/**Второй HEADER, в нём расположено лого и др.*/
+.header_second {
+	height: 100px;
+	display: grid;
+	align-content: center;
+
+}
+
+.header_second_nav {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+.header_second_nav > ul > li {
+	display: block;
+	float: left;
+	margin-right: 20px;
+	height: 50px;
+	display: grid;
+	align-content: center;
+}
+
+.header_second_nav > ul > li > a {
+	margin-top: 30px;
+	font-size: 13px;
+	font-weight: 400;
+	color: #000000;
+	text-decoration: none;
+}
+
+.header_second_nav > ul > li > a:hover {
+	color: #799b10;
+}
+
+.header_call_block {
+	margin-top: 10px;
+	align-items: right;
+}
+
+.header_call {
+	color: #799b10;
+	border-bottom: 0.5px dashed #799b10;
+	width: 50%;
+	margin-left: 10%;
+	font-size: 13px;
+	text-align: right;
+}
+
+.header_call::before {
+	content: '';
+	display: inline-block;
+	background: url('/images/site/call_before.jpg') no-repeat center top / cover;
+	height: 15px;
+	width: 15px;
+	margin-right: 5px;
+	vertical-align: middle;
+	border:none;
+}
+
+.header_number {
+	font-size: 18px;
+	margin-left: 10%;
+}
