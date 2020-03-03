@@ -42,3 +42,23 @@ function removeFromCart(productId) {
 		}
 	});
 }
+
+function addOneToCart(productId) {
+	addToCart(productId);
+	prodPrice = $('#prodPrice_'+productId);
+	prodTruePrice = $('#prodTruePrice_'+productId);
+	prodCount = $('#prodCount_'+productId);
+	prodCount.text(parseInt(prodCount.text(), 10)+1);
+	prodPrice.text(parseInt(prodCount.text(), 10)*parseInt(prodTruePrice.text(), 10));
+}
+
+function removeOneFromCart(productId) {
+	if (parseInt($('#prodCount_'+productId).text(), 10) > 1) {
+		removeFromCart(productId);
+		prodPrice = $('#prodPrice_'+productId);
+		prodTruePrice = $('#prodTruePrice_'+productId);
+		prodCount = $('#prodCount_'+productId);
+		prodCount.text(parseInt(prodCount.text(), 10)-1);
+		prodPrice.text(parseInt(prodCount.text(), 10)*parseInt(prodTruePrice.text(), 10));
+	}
+}

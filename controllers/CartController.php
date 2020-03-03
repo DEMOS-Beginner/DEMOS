@@ -36,7 +36,7 @@ function addtocartAction() {
 	//Если id добавляемого продукта не был передан, то выходим из функции
 	if (! $productId) return false;
 
-	if (isset($_SESSION['cart']) && array_search($productId, $_SESSION['cart']) === false) {
+	if (isset($_SESSION['cart'])) {
 		$_SESSION['cart'][] = $productId;
 		$resData['success'] = 1;
 	} else {

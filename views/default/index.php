@@ -1,8 +1,8 @@
-<h2 class='index_last_products'>
-	Последние добавленные товары:
-</h2>
-
 <div class="container">
+	<h2 class='index_last_products'>
+		Последние добавленные товары:
+	</h2>
+
 	<div class="index_products">
 		<?php foreach($lastProducts as $product): ?>
 

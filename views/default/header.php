@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="/static/default/css/index_styles.css">
 	<link rel="stylesheet" href="/static/default/css/actions_panel.css">
 	<link rel="stylesheet" href="/static/default/css/product_page.css">
+	<link rel="stylesheet" href="/static/default/css/cart.css">
 	<script src='/js/main.js'></script>
 	<script src='/js/jquery.js'></script>
 </head>
