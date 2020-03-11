@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="/static/default/css/actions_panel.css">
 	<link rel="stylesheet" href="/static/default/css/product_page.css">
 	<link rel="stylesheet" href="/static/default/css/cart.css">
+	<link rel="stylesheet" href="/static/default/css/modal_logreg.css">
+	<link rel="stylesheet" href="/static/default/css/user_menu.css">
 	<script src='/js/main.js'></script>
 	<script src='/js/jquery.js'></script>
 </head>
@@ -71,9 +73,31 @@
 				<div class="search_input_div">
 					<input type="text" id='search' name='search' placeholder="Что будем искать?">
 				</div>
-				<a href="#" class="login_link">
-					Войти на сайт
-				</a>
+				<div class="user_block">
+					<div class="user_name">
+						<?php if (!isset($_SESSION['user'])): ?>
+							<a href="#" class="login_link" onclick='showLogreg(); return false;' id='userCabinet'>
+								Войти на сайт
+							</a>
+						<?php else: ?>
+							<a href="#" class="login_link" onclick='showUserDropDown(); return false;' id='userCabinet'>
+								<?= $_SESSION['user']['email'] ?>
+							</a>					
+						<?php endif; ?>
+					</div>
+					<div class="user_menu">
+						<nav>
+							<ul>
+								<li class='hello'>Здравствуйте</li>
+								<li class='my_page'><a href="/user"><?= $_SESSION['user']['email'] ?></a></li>
+								<li class='my_orders'><a href="#">МОИ ЗАКАЗЫ</a></li>
+								<li class='my_data'><a href="#">ЛИЧНЫЕ ДАННЫЕ</a></li>
+								<li class='my_collection'><a href="#">МОЯ КОЛЛЕКЦИЯ</a></li>
+								<li class='logout'><button>Выйти</button></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
 			</div>
 
 			<div class="cart_panel">
@@ -88,5 +112,33 @@
 			</div>
 		</div>
 	</section>
+
+	<div class="log_modal">
+		<div class="log_modal_content">
+			<span class="log_close" id='logClose'>&times;</span>
+			<h2 class='log_heading'>Вход на сайт</h2>
+			<div class="log_error hideme"></div>
+			<input type="text" id="userEmail" class="log_input" placeholder="Email" name='userEmail'>
+			<span class='log_or'>или</span>
+			<input type="text" id="userNumber" class="log_input" placeholder="Телефон" name='userName'>
+			<input type="text" id="userPassword" class="log_input" placeholder="Пароль" name='userPassword'>
+			<a href="#" class='log_register_link' onclick='showReg();'>Не зарегистрированы?</a>
+			<button class='log_button' onclick='login();'>ВОЙТИ</button>
+		</div>
+	</div>
+
+	<div class="reg_modal">
+		<div class="reg_modal_content">
+			<span class="reg_close" id='regClose'>&times;</span>
+			<h2 class='reg_heading'>Регистрация</h2>
+			<div class="reg_error hideme"></div>
+			<input type="text" id="userEmail" class="reg_input" placeholder="Email" name='userEmail'>
+			<input type="text" id="userName" class="reg_input" placeholder="Имя и фамилия" name='userName'>
+			<input type="text" id="userPassword" class="reg_input" placeholder="Пароль" name='userPassword'>
+			<button class='reg_button' onclick='register();'>Зарегистрироваться</button>
+		</div>
+	</div>
+
+
 
 

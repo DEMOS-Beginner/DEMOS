@@ -33,6 +33,9 @@
 
 			<div class="product_setcolor_block">
 				<p> Цвет: </p>
+				<?php foreach ($product['colors'] as $color):?>
+					<div class='product_color' style='background-color: <?=$color['hex_color']?>'></div>
+				<?php endforeach; ?>
 			</div>
 
 			<div class="product_buy_block">

@@ -1,0 +1,36 @@
+.user_menu {
+	position: absolute;
+	opacity: 0;
+	background-color: white;
+	left: 22.5%;
+	margin-top: 18px;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+	height: 200px;
+	transition: all ease 0.2s;
+	width: 75%;
+}
+
+.user_menu > nav > ul {
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+}
+
+.user_menu > nav > ul > li {
+	list-style-type: none;
+	margin-top: 10px;
+}
+
+.user_menu > nav > ul > .hello {
+	font-weight: 300;
+	font-size: 12px;
+}
+
+.user_menu > nav > ul > .my_page > a {
+	text-decoration: none;
+	color: black;
+}
+
+.user_menu > nav > ul > .my_page > a:hover {
+	text-decoration: underline;
+	color: rgb(141,174,38);
+}

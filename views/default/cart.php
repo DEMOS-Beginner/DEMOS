@@ -36,7 +36,13 @@
 							</a>
 						</td>
 						<td>
-							<select name="color" id="cartSelectColor_<?=$product['id']?>"></select>
+							<select name="color" id="cartSelectColor_<?=$product['id']?>">
+								<?php foreach($product['colors'] as $color): ?>
+									<option value="<?=$color['id']?>">
+										<?=$color['name']?>
+									</option>
+								<?php endforeach; ?>
+							</select>
 						</td>
 						<td class='cart_count_block'>
 							<a class='cart_edit' href="#" onclick='removeOneFromCart(<?=$product['id']?>); return false;'>

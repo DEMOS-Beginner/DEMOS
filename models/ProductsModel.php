@@ -34,6 +34,15 @@ function getProductById($id) {
 	$query->execute(array('id'=>$id));
 	$result = $query->fetch(PDO::FETCH_ASSOC);
 
+	//Получение соответствующих цветов для продукта
+	$colors = explode(', ', $result['colors']);
+	$result['colors'] = array();
+	foreach($colors as $color_id) {
+		$sql = "SELECT * FROM colors WHERE id = :id";
+		$query = $pdo->prepare($sql);
+		$query->execute(array('id'=>$color_id));
+		$result['colors'][] = $query->fetch(PDO::FETCH_ASSOC);
+	}
 	return $result;
 }
 
