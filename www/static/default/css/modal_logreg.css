@@ -1,5 +1,6 @@
 .log_modal, .reg_modal {
-	display: none;
+	opacity: 0;
+	visibility: hidden;
 	overflow: auto;
 	width: 100%;
 	height: 100%;
@@ -8,7 +9,7 @@
 	z-index: 1;
 	left: 0;
 	top: 0;
-	transition: all ease 1s;
+	transition: all 0.2s linear;
 }
 
 .log_modal_content, .reg_modal_content {

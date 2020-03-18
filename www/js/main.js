@@ -87,20 +87,23 @@ function resetModal() {
 
 function showLogreg() {
 	var modal = document.getElementsByClassName("log_modal")[0];
-	modal.style.display = "block";
+	modal.style.visibility = "visible";
+	modal.style.opacity = 1;
 
 
 	var close = document.getElementById('logClose');
 	close.onclick = function() {
 		var modal = document.getElementsByClassName("log_modal")[0];
-		modal.style.display = 'none';
+		modal.style.visibility = "hidden";
+		modal.style.opacity = 0;
 		resetModal()
 	}
 
 	window.onclick = function(event) {
 		var modal = document.getElementsByClassName("log_modal")[0];
 		if (event.target == modal) {
-			modal.style.display = 'none';
+			modal.style.visibility = "hidden";
+			modal.style.opacity = 0;
 			resetModal()
 		}
 	}
@@ -108,22 +111,27 @@ function showLogreg() {
 
 function showReg() {
 	let log_modal = document.getElementsByClassName("log_modal")[0];
-	log_modal.style.display = "none";
+	log_modal.style.visibility = "hidden";
+	log_modal.style.opacity = 0;
 
 	let modal = document.getElementsByClassName("reg_modal")[0];
-	modal.style.display = "block";
+	modal.style.visibility = "visible";
+	modal.style.opacity = 1;
 
 	var close = document.getElementById('regClose');
 	close.onclick = function() {
 		let modal = document.getElementsByClassName("reg_modal")[0];
-		modal.style.display = 'none';
+		modal.style.visibility = "hidden";
+		modal.style.opacity = 0;
+
 		resetModal()
 	}
 
 	window.onclick = function(event) {
 		let modal = document.getElementsByClassName("reg_modal")[0];
 		if (event.target == modal) {
-			modal.style.display = 'none';
+			modal.style.visibility = "hidden";
+			modal.style.opacity = 0;
 			resetModal()
 		}
 	}
@@ -156,6 +164,7 @@ function register() {
 
 
 function login() {
+	//Выполняет AJAX Запрос для логина
 	postData = getData('.log_modal_content');
 	console.log(postData);
 	$.ajax({
@@ -168,8 +177,10 @@ function login() {
 				let modal = document.getElementsByClassName("log_modal")[0];
 				modal.style.display = 'none';
 				let userCabinet = document.getElementById('userCabinet');
-				console.log(userCabinet);
 				userCabinet.innerHTML = data['email'];
+				userCabinet.onclick = showUserDropDown;
+				let toUserPage = document.getElementById('toUserPage');
+				toUserPage.innerHTML = data['email'];
 			} else {
 				let log_error = document.getElementsByClassName("log_error")[0];
 				log_error.style.display = 'block';
@@ -184,14 +195,37 @@ function login() {
 }
 
 function showUserDropDown() {
-	let user_menu = document.getElementsByClassName("user_menu")[0];
-	if (user_menu.style.opacity == '0') {
-		user_menu.style.opacity = '1';
+	//Отвечает за показ выпадающего списка в меню пользователя
+	let user_menu = document.getElementsByClassName("ma_user_menu")[0];
+	if (user_menu.style.opacity == 0) {
+		user_menu.style.visibility = 'visible';
+		user_menu.style.opacity = 1;
 		user_menu.style.marginTop = '18px';
 		user_menu.style.top = '100%';	
+		user_menu.style.height = '250px';
 	} else {
-		user_menu.style.opacity = '0';			
-		user_menu.style.marginTop = '0';
-		user_menu.style.bottom = '100%';
+		user_menu.style.opacity = 0;			
+		user_menu.style.height = '50px';
+		user_menu.style.visibility = 'hidden';
 	}
+}
+
+function showOrders() {
+	//Показывает или скрывает все завершенные заказы
+	let oldOrders = document.getElementById('oldOrdersTable');
+	let newOrders = document.getElementById('newOrdersTable');
+	let oldOrdersLink = document.getElementById('oldOrdersLink');
+	let newOrdersLink = document.getElementById('newOrdersLink');
+	if (oldOrders.style.display == 'none') {
+		oldOrders.style.display = 'block';
+		newOrders.style.display = 'none';
+		oldOrdersLink.className += ' active'
+		newOrdersLink.className = 'user_orders_switch';
+	} else {
+		oldOrders.style.display = 'none';
+		newOrders.style.display = 'block';
+		oldOrdersLink.className = 'user_orders_switch';
+		newOrdersLink.className += ' active'
+	}
+
 }

@@ -1,10 +1,10 @@
 <div class="container">
 	<div class="product_categories_block">
-		<a href="#"> Главная </a> -
-		<a href="#"> Кубы NXNXN </a> -
-		<a href="#"> 3x3 </a> -
-		<a href="#"> Qiyi Mofangge </a> -
-		<span> <?=$product['name']?> </span>	
+		<a href="/" class='product_nav_link'> Главная -</a>
+		<a href="#" class='product_nav_link'> Кубы NXNXN -</a>
+		<a href="#" class='product_nav_link'> 3x3 -</a>
+		<a href="#" class='product_nav_link'> Qiyi Mofangge -</a>
+		<span class='product_nav_link'> <?=$product['name']?> </span>	
 	</div>
 
 	<section class="product_section">

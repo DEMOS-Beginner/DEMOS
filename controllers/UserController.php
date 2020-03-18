@@ -8,9 +8,20 @@
 
 //Подключение необходимых библиотек
 require_once "../models/UsersModel.php";
+require_once "../models/OrdersModel.php";
 
 
 
+/*
+* Занимается выводом главной страницы пользователя
+*/
+function indexAction() {
+	$userOrders = getCurrentUserOrders();
+
+	loadTemplate('header');	
+	loadTemplate('my_orders', ['userOrders' => $userOrders]);
+	loadTemplate('footer');
+}
 
 
 
@@ -86,9 +97,17 @@ function loginAction() {
 
 }
 
+/**
+* Осуществляет выход из аккаунта (удаляет сессионные переменные)
+*/
+function logoutAction() {
+	if (isset($_SESSION['user'])) {
+		unset($_SESSION['user']);
+		unset($_SESSION['cart']);
+	}
 
-
-
+	redirect();
+}
 
 
 

@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="cart_categories_block">
-		<a href="/">Главная</a> - <span>Моя корзина </span>
+		<a href="/" class='cart_nav_link'>Главная</a> - <span class='cart_nav_link'>Моя корзина </span>
 	</div>
 	<h2 class = 'cart_page_name'> МОЯ КОРЗИНА </h2>
 

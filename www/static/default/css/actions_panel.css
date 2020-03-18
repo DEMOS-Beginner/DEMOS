@@ -2,19 +2,19 @@
 
 
 /**ПАНЕЛЬ ДЛЯ ОСНОВНЫХ ДЕЙСТВИЙ*/
-.main_actions_section {
+.ma_section {
 	height: 60px;
 	width: 100%;
 }
 
-.main_actions_div {
+.ma_block {
 	height: 60px;
 	width: 100%;
 	display: grid;
 	grid-template-columns: 3fr 1fr;
 }
 
-.actions_panel {
+.ma_panel {
 	background-color: rgb(71,157,190);
 	position: relative;
 	display: grid;
@@ -24,7 +24,7 @@
 	align-items: center;
 }
 
-.actions_panel > p {
+.ma_panel > p {
 	margin-left: 25%;
 	color: #ffffff;
 	font-size: 16px;
@@ -32,13 +32,13 @@
 	font-weight: 700;
 }
 
-.search_input_div {
+.ma_search_input_block {
 	height: 40px;
 	position: relative;
 	margin-left: 10%;
 }
 
-.search_input_div > input {
+.ma_search_input_block > input {
 	height: 40px;
 	background-color: #3884a1;
 	border: none;
@@ -49,13 +49,13 @@
 	width: 100%;
 }
 
-.search_input_div > input::placeholder {
+.ma_search_input_block > input::placeholder {
 	font-size: 16px;
 	color: #ffffff;
 	opacity: 1;
 }
 
-.search_input_div::after {
+.ma_search_input_block::after {
 	content: '';
 	display: block;
 	position: absolute;
@@ -69,7 +69,7 @@
 
 }
 
-.login_link {
+.ma_login_link {
 	margin-left: 25%;
 	text-decoration: none;
 	color: none;
@@ -81,7 +81,7 @@
 	white-space: nowrap;
 }
 
-.login_link::before {
+.ma_login_link::before {
 	content: '';
 	display: inline-block;
 	background: url('/images/site/login_link_before.jpg') no-repeat center top / cover;
@@ -92,7 +92,7 @@
 	border:none;
 }
 
-.actions_panel:after {
+.ma_panel:after {
 	content: '';
 	display: block;
 	position: absolute;
@@ -105,14 +105,14 @@
 	border-bottom: 30px solid transparent;
 }
 
-.cart_div {
+.ma_cart_block {
 	margin-left: 15%;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	position: relative;
 }
 
-.cart_link, #price_of_cart {
+.ma_cart_link, #price_of_cart {
 	color: white;
 	font-size: 14px;
 	font-weight: 900;
@@ -126,11 +126,11 @@
 	font-weight: 400;
 }
 
-.cart_panel {
+.ma_cart_panel {
 	background-color: rgb(141,174,38);
 }
 
-.cart_div::before {
+.ma_cart_block::before {
 	content: '';
 	position: absolute;
 	top: 30%;
@@ -141,6 +141,6 @@
 	width: 25px;
 }
 
-.user_block {
+.ma_user_block {
 	position: relative;
 }
